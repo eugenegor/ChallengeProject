@@ -7,7 +7,7 @@ from pages.login_page import LoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestLoginPage(unittest.TestCase):
+class NegativeLogin(unittest.TestCase):
 
     @classmethod
     def setUp(self):
@@ -17,15 +17,13 @@ class TestLoginPage(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_log_in_to_the_system(self):
-        user_login = LoginPage(self.driver)
-        user_login.title_of_page()
-        user_login.compare_text()
-        user_login.type_in_email('user07@getnada.com')
-        user_login.type_in_password('Test-1234')
-        user_login.click_on_the_sign_in_button()
-        dashboard_page = Dashboard(self.driver)
-        dashboard_page.title_of_page()
+    def test_try_negative_login(self):
+        negative_log = LoginPage(self.driver)
+        negative_log.type_in_email('user07@getnada.com')
+        negative_log.type_in_password('Test-123')
+        negative_log.click_on_the_sign_in_button()
+        negative_log.compare_warning_text()
+        #negative_log.taking_text()
         time.sleep(5)
 
     @classmethod

@@ -9,7 +9,7 @@ from test_cases.login_to_the_system import TestLoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class Test(unittest.TestCase):
+class TestAddingAplayer(unittest.TestCase):
 
     @classmethod
     def setUp(self):
