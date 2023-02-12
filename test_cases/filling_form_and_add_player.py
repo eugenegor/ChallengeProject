@@ -11,7 +11,7 @@ from test_cases.login_to_the_system import TestLoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class FillingAForm(unittest.TestCase):
+class FillingForm(unittest.TestCase):
 
     @classmethod
     def setUp(self):
@@ -21,7 +21,7 @@ class FillingAForm(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_filling_A_Form(self):
+    def test_filling_a_Form(self):
         TestAddingAplayer.test_add_a_player(self)
         filling_text = AddAMatchForm(self.driver)
         filling_text.main_button_is_visible()
