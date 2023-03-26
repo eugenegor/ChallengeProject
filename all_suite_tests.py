@@ -2,7 +2,6 @@ import unittest
 
 from unittest.loader import makeSuite
 
-
 from test_cases.framework import Test
 from test_cases.youtube_fill_and_delete import YoutubeFillAndDelete
 from test_cases.change_language import ChangeLanguage
@@ -15,18 +14,18 @@ from test_cases.sign_out import SigningOut
 
 
 def full_suite():
-   test_suite = unittest.TestSuite()
-   test_suite.addTest(makeSuite(ChangeLanguage))
-   test_suite.addTest(makeSuite(ChooseLeg))
-   test_suite.addTest(makeSuite(FillingForm))
-   test_suite.addTest(makeSuite(GoOnAPlayerPage))
-   test_suite.addTest(makeSuite(TestLoginPage))
-   test_suite.addTest(makeSuite(NegativeLogin))
-   test_suite.addTest(makeSuite(SigningOut))
-   test_suite.addTest(makeSuite(YoutubeFillAndDelete))
-   return test_suite
+    test_suite = unittest.TestSuite()
+    test_suite.addTest(makeSuite(ChangeLanguage))
+    test_suite.addTest(makeSuite(ChooseLeg))
+    test_suite.addTest(makeSuite(FillingForm))
+    test_suite.addTest(makeSuite(GoOnAPlayerPage))
+    test_suite.addTest(makeSuite(TestLoginPage))
+    test_suite.addTest(makeSuite(NegativeLogin))
+    test_suite.addTest(makeSuite(SigningOut))
+    test_suite.addTest(makeSuite(YoutubeFillAndDelete))
+    return test_suite
 
 
 if __name__ == '__main__':
-   runner = unittest.TextTestRunner(verbosity=2)
-   runner.run(full_suite())
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(full_suite())
